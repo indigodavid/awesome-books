@@ -6,24 +6,15 @@
 
 This repository contains an web app that allows to add and remove book's data using Javascript
 
-## Built With
-
-- Javascript
-- HTML
-- CSS
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
 Modern web browser with Javascript enabled
 ### Install
+
 git clone https://github.com/indigodavid/awesome-books.git
 
 ## Authors
