@@ -4,12 +4,13 @@
 
 > Description the project.
 
+This repository contains an web app that allows to add and remove book's data using Javascript
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Javascript
+- HTML
+- CSS
 
 ## Live Demo (if available)
 
@@ -18,35 +19,22 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
-### Setup
-
+Modern web browser with Javascript enabled
 ### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+git clone https://github.com/indigodavid/awesome-books.git
 
 ## Authors
 
-👤 **Author1**
+👤 **David Vera**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@indigodavid](https://github.com/indigodavid)
+- Twitter: [@indigo1987](https://twitter.com/indigo1987)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/david-vera-castillo-001b5756/)
 
-👤 **Author2**
+👤 **Alvaro Ruiz**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
@@ -65,8 +53,8 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- My supportive family 😊
 
 ## 📝 License
 
