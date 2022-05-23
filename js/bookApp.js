@@ -12,11 +12,11 @@ class Book {
 }
 
 function getLi(title, author, id) {
-  let divAuthor = document.createElement('div');
-  let divTitle = document.createElement('div');
-  let removeButton = document.createElement('button');
-  let hr = document.createElement('hr');
-  let li = document.createElement('li');
+  const divAuthor = document.createElement('div');
+  const divTitle = document.createElement('div');
+  const removeButton = document.createElement('button');
+  const hr = document.createElement('hr');
+  const li = document.createElement('li');
 
   divTitle.classList.add('author');
   divAuthor.classList.add('title');
@@ -55,10 +55,10 @@ function loadData() {
 
 loadData();
 
-addBook.addEventListener('click', (e) => {
-  if(newTitle.value && newAuthor.value) {
-    let id = bookData[bookData.length - 1] ? bookData[bookData.length - 1].id + 1 : 1;
-    let book = new Book(newTitle.value, newAuthor.value, id);
+addBook.addEventListener('click', () => {
+  if (newTitle.value && newAuthor.value) {
+    const id = bookData[bookData.length - 1] ? bookData[bookData.length - 1].id + 1 : 1;
+    const book = new Book(newTitle.value, newAuthor.value, id);
     bookData.push(book);
     bookList.appendChild(getLi(book.title, book.author, book.id));
     storeData();
@@ -66,10 +66,10 @@ addBook.addEventListener('click', (e) => {
 });
 
 function removeLi(id) {
-  let li = document.getElementById(`book${id}`);
+  const li = document.getElementById(`book${id}`);
   li.remove();
-  bookData = bookData.filter((book) => {
-    return book.id !== id;
-  });
+  bookData = bookData.filter((book) => book.id !== id);
   storeData();
 }
+
+removeLi(0);
