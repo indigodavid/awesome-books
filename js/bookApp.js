@@ -2,7 +2,6 @@ const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
-let removeButtons = document.querySelectorAll('.remove');
 let bookData = [];
 class Book {
   constructor(title = 'New Book', author = 'John Doe', id) {
@@ -23,6 +22,7 @@ function getLi(title, author, id) {
   divAuthor.classList.add('title');
   removeButton.classList.add('remove');
   removeButton.setAttribute('id', `button${id}`);
+  removeButton.setAttribute('onclick', `javascript:removeLi(${id})`);
   li.classList.add('book');
   li.setAttribute('id', `book${id}`);
 
@@ -61,20 +61,15 @@ addBook.addEventListener('click', (e) => {
     let book = new Book(newTitle.value, newAuthor.value, id);
     bookData.push(book);
     bookList.appendChild(getLi(book.title, book.author, book.id));
-    removeButtons = document.querySelectorAll('.remove');
     storeData();
   }
 });
 
-removeButtons.forEach((button) => {
-  button.addEventListener('click', (e) => {
-    console.log('remove clicked');
-    let titleToRemove = button.parentElement.querySelector('.title').innerHTML;
-    let authorToRemove = button.parentElement.querySelector('.author').innerHTML;
-    bookData.filter((book) => {
-      return book.title !== titleToRemove && book.author !== authorToRemove;
-    });
-    console.log(bookData);
-    button.parentElement.remove();
+function removeLi(id) {
+  let li = document.getElementById(`book${id}`);
+  li.remove();
+  bookData = bookData.filter((book) => {
+    return book.id !== id;
   });
-});
+  storeData();
+}
