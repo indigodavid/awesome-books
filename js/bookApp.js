@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const newTitle = document.getElementById('new-title');
@@ -35,7 +36,6 @@ function getLi(title, author, id) {
 }
 
 class StorageBooks {
-  
   static storeData() {
     localStorage.setItem('bookData', JSON.stringify(bookData));
   }
@@ -58,7 +58,7 @@ class StorageBooks {
     StorageBooks.storeData();
   }
 
-  static addLi () {
+  static addLi() {
     if (newTitle.value && newAuthor.value) {
       const id = bookData[bookData.length - 1] ? bookData[bookData.length - 1].id + 1 : 1;
       const book = new Book(newTitle.value, newAuthor.value, id);
@@ -71,5 +71,3 @@ class StorageBooks {
 
 document.addEventListener('DOMContentLoaded', StorageBooks.loadData);
 addBook.addEventListener('click', StorageBooks.addLi);
-
-  
