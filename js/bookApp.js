@@ -2,6 +2,7 @@ const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
+let bookData;
 
 class Book {
   constructor(title = 'New Book', author = 'John Doe', id) {
@@ -22,7 +23,7 @@ function getLi(title, author, id) {
   divAuthor.classList.add('title');
   removeButton.classList.add('remove');
   removeButton.setAttribute('id', `button${id}`);
-  removeButton.setAttribute('onclick', `javascript:removeLi(${id})`);
+  removeButton.setAttribute('onclick', `javascript:StorageBooks.removeLi(${id})`);
   li.classList.add('book');
   li.setAttribute('id', `book${id}`);
 
@@ -39,35 +40,18 @@ function getLi(title, author, id) {
   return li;
 }
 
-loadData();
-
-addBook.addEventListener('click', () => {
-  if (newTitle.value && newAuthor.value) {
-    const id = bookData[bookData.length - 1] ? bookData[bookData.length - 1].id + 1 : 1;
-    const book = new Book(newTitle.value, newAuthor.value, id);
-    bookData.push(book);
-    bookList.appendChild(getLi(book.title, book.author, book.id));
-    storeData();
-  }
-});
-
-// removeLi(0);
-
-// New Class 
 class StorageBooks {
-  constructor(bookData) {
-    this.bookData = bookData;
-  }
-
+  
   static storeData() {
-  localStorage.setItem('bookData', JSON.stringify(this.bookData));
+    localStorage.setItem('bookData', JSON.stringify(this.bookData));
   }
 
   static loadData() {
+    bookData = [];
     const data = localStorage.getItem('bookData');
     if (data) {
-      this.bookData = JSON.parse(data);
-      this.bookData.forEach((book) => {
+      bookData = JSON.parse(data);
+      bookData.forEach((book) => {
         bookList.appendChild(getLi(book.title, book.author, book.id));
       });
     }
@@ -79,5 +63,19 @@ class StorageBooks {
     bookData = bookData.filter((book) => book.id !== id);
     storeData();
   }
+
+  static addLi () {
+    if (newTitle.value && newAuthor.value) {
+      const id = bookData[bookData.length - 1] ? bookData[bookData.length - 1].id + 1 : 1;
+      const book = new Book(newTitle.value, newAuthor.value, id);
+      bookData.push(book);
+      bookList.appendChild(getLi(book.title, book.author, book.id));
+      storeData();
+    }
+  }
 }
+
+document.addEventListener('DOMContentLoaded', StorageBooks.loadData);
+addBook.addEventListener('click', StorageBooks.addLi);
+
   
