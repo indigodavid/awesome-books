@@ -12,7 +12,8 @@ fieldset {
   margin-top: 2rem;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -33,6 +34,7 @@ li {
   justify-content: space-between;
   padding: 1rem;
   background-color: #ccc;
+  align-items: center;
 }
 
 li:nth-child(2n) {
@@ -41,4 +43,51 @@ li:nth-child(2n) {
 
 .remove {
   align-self: flex-end;
+  appearance: none;
+  box-shadow: 5px 5px black;
+  padding: 0.5rem;
+}
+
+.remove:hover {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+.remove:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+  background-color: rgb(156, 147, 147);
+}
+
+#new-book {
+  width: 96%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  gap: 1rem;
+  border: none;
+}
+
+#new-book > * {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#add-book {
+  width: fit-content;
+  padding: 0.2rem;
+  appearance: none;
+  box-shadow: 5px 5px black;
+}
+
+#add-book:hover {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+#add-book:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+  background-color: rgb(156, 147, 147);
 }
