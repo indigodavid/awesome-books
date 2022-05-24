@@ -13,29 +13,23 @@ class Book {
 }
 
 function getLi(title, author, id) {
-  const divAuthor = document.createElement('div');
-  const divTitle = document.createElement('div');
+  const div = document.createElement('div');
   const removeButton = document.createElement('button');
-  const hr = document.createElement('hr');
   const li = document.createElement('li');
 
-  divTitle.classList.add('author');
-  divAuthor.classList.add('title');
+  div.classList.add('book-info');
   removeButton.classList.add('remove');
   removeButton.setAttribute('id', `button${id}`);
   removeButton.setAttribute('onclick', `javascript:StorageBooks.removeLi(${id})`);
   li.classList.add('book');
   li.setAttribute('id', `book${id}`);
 
-  divTitle.innerHTML = title;
-  divAuthor.innerHTML = author;
+  div.innerHTML = `${title} by ${author}`;
   removeButton.innerText = 'Remove';
   removeButton.type = 'button';
 
-  li.appendChild(divTitle);
-  li.appendChild(divAuthor);
+  li.appendChild(div);
   li.appendChild(removeButton);
-  li.appendChild(hr);
 
   return li;
 }

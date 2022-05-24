@@ -1,9 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 fieldset {
   margin-top: 2rem;
 }
 
-#book-list {
-  width: 100%;
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#all-books {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  width: 96%;
+  margin: 0 auto;
 }
 
 li {
@@ -11,6 +31,12 @@ li {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
+  background-color: #ccc;
+}
+
+li:nth-child(2n) {
+  background-color: #fff;
 }
 
 .remove {
