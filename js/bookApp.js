@@ -2,7 +2,7 @@ const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
-let bookData = [];
+
 class Book {
   constructor(title = 'New Book', author = 'John Doe', id) {
     this.title = title;
@@ -39,20 +39,6 @@ function getLi(title, author, id) {
   return li;
 }
 
-function storeData() {
-  localStorage.setItem('bookData', JSON.stringify(bookData));
-}
-
-function loadData() {
-  const data = localStorage.getItem('bookData');
-  if (data) {
-    bookData = JSON.parse(data);
-    bookData.forEach((book) => {
-      bookList.appendChild(getLi(book.title, book.author, book.id));
-    });
-  }
-}
-
 loadData();
 
 addBook.addEventListener('click', () => {
@@ -65,11 +51,33 @@ addBook.addEventListener('click', () => {
   }
 });
 
-function removeLi(id) {
-  const li = document.getElementById(`book${id}`);
-  li.remove();
-  bookData = bookData.filter((book) => book.id !== id);
-  storeData();
-}
+// removeLi(0);
 
-removeLi(0);
+// New Class 
+class StorageBooks {
+  constructor(bookData) {
+    this.bookData = bookData;
+  }
+
+  static storeData() {
+  localStorage.setItem('bookData', JSON.stringify(this.bookData));
+  }
+
+  static loadData() {
+    const data = localStorage.getItem('bookData');
+    if (data) {
+      this.bookData = JSON.parse(data);
+      this.bookData.forEach((book) => {
+        bookList.appendChild(getLi(book.title, book.author, book.id));
+      });
+    }
+  }
+
+  static removeLi(id) {
+    const li = document.getElementById(`book${id}`);
+    li.remove();
+    bookData = bookData.filter((book) => book.id !== id);
+    storeData();
+  }
+}
+  
