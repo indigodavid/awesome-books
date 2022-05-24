@@ -43,7 +43,7 @@ function getLi(title, author, id) {
 class StorageBooks {
   
   static storeData() {
-    localStorage.setItem('bookData', JSON.stringify(this.bookData));
+    localStorage.setItem('bookData', JSON.stringify(bookData));
   }
 
   static loadData() {
@@ -61,7 +61,7 @@ class StorageBooks {
     const li = document.getElementById(`book${id}`);
     li.remove();
     bookData = bookData.filter((book) => book.id !== id);
-    storeData();
+    StorageBooks.storeData();
   }
 
   static addLi () {
@@ -70,7 +70,7 @@ class StorageBooks {
       const book = new Book(newTitle.value, newAuthor.value, id);
       bookData.push(book);
       bookList.appendChild(getLi(book.title, book.author, book.id));
-      storeData();
+      StorageBooks.storeData();
     }
   }
 }
