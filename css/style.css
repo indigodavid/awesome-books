@@ -48,7 +48,7 @@ nav {
   justify-content: space-between;
   padding: 1rem;
   width: 96%;
-  margin: 0 auto;
+  margin: 1rem auto 0;
   border: solid 1px #000;
 }
 
@@ -156,4 +156,11 @@ nav > ul {
   margin-bottom: 2rem;
   text-align: right;
   width: 96%;
+}
+
+footer {
+  width: 96%;
+  border: solid 1px #000;
+  padding: 1rem;
+  margin: 0 auto 1rem;
 }
