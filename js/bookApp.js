@@ -69,5 +69,7 @@ class StorageBooks {
   }
 }
 
+document.getElementById('date').innerHTML = Date();
+
 document.addEventListener('DOMContentLoaded', StorageBooks.loadData);
 addBook.addEventListener('click', StorageBooks.addLi);
