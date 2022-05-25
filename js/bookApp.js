@@ -86,3 +86,12 @@ addBook.addEventListener('click', StorageBooks.addLi);
 /*
 Activate and Deactivate Sections
 */
+listLink.addEventListener('click', () => {
+  allBooksSection.classList.toggle('active');
+  allBooksSection.classList.remove('hide-class');
+});
+
+addLink.addEventListener('click', () => {
+  addNewBookSection.classList.toggle('active');
+  addNewBookSection.classList.remove('hide-class');
+});

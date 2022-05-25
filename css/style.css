@@ -99,7 +99,7 @@ footer {
 }
 
 .wrapper {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 #new-book {
@@ -137,9 +137,6 @@ footer {
   background-color: rgb(156, 147, 147);
 }
 
-#add-new-book {
-  transform: translateX(-110%);
-}
 
 #all-books {
   border-style: solid;
@@ -147,7 +144,6 @@ footer {
   border-color: black;
   width: 96%;
   margin: 0 auto;
-  transform: translateX(-110%);
 }
 
 #book-list li {
@@ -167,7 +163,6 @@ footer {
 #contact {
   display: flex;
   flex-direction: column;
-  transform: translateX(-110%);
 }
 
 #contact > * {
@@ -193,6 +188,13 @@ footer {
 /*
 Activate and Deactivate styles
 */
-#add-new-book.active {
-  transform: translateX(0);
+.hide-class {
+  position: fixed;
+  top: 0;
+  left: -110%;
+  transition: 0.3s;
+}
+
+.hide-class.active {
+  left: 0;
 }
