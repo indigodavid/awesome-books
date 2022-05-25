@@ -3,6 +3,15 @@ const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
+
+const allBooksSection = document.getElementById('all-books');
+const addNewBookSection = document.getElementById('add-new-book');
+const contactSection = document.getElementById('contact');
+const listLink = document.getElementById('list-link');
+const addLink = document.getElementById('add-link');
+const contactLink = document.getElementById('contact-link');
+
+
 let bookData;
 
 class Book {
@@ -73,3 +82,7 @@ document.getElementById('date').innerHTML = Date();
 
 document.addEventListener('DOMContentLoaded', StorageBooks.loadData);
 addBook.addEventListener('click', StorageBooks.addLi);
+
+/*
+Activate and Deactivate Sections
+*/

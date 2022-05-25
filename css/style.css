@@ -14,6 +14,21 @@ fieldset {
   margin-top: 2rem;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited,
+a {
+  color: #000;
+}
+
+ul a:hover,
+ul a:active {
+  color: aqua;
+}
+
+
 button {
   appearance: none;
   border: solid 1px #000;
@@ -163,4 +178,15 @@ footer {
   border: solid 1px #000;
   padding: 1rem;
   margin: 0 auto 1rem;
+}
+
+/*
+Activate and Deactivate styles
+*/
+.active {
+  
+}
+
+.deactive {
+  transform: translate();
 }
