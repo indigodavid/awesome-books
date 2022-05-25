@@ -16,25 +16,23 @@ fieldset {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
-a:visited,
-a {
+a:visited {
   color: #000;
 }
 
 ul a:hover {
   color: rgb(58, 204, 4);
   transition-duration: 0.1s;
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
 ul a:active {
   color: green;
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
-
-
 
 button {
   appearance: none;
@@ -143,7 +141,6 @@ footer {
   box-shadow: none;
   background-color: rgb(156, 147, 147);
 }
-
 
 #all-books {
   border-style: solid;
