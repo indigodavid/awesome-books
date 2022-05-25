@@ -23,10 +23,17 @@ a {
   color: #000;
 }
 
-ul a:hover,
-ul a:active {
-  color: aqua;
+ul a:hover {
+  color: rgb(58, 204, 4);
+  transition-duration: 0.1s;
+  transform: scale(1.10);
 }
+
+ul a:active {
+  color: green;
+  transform: scale(1.10);
+}
+
 
 
 button {
@@ -170,6 +177,10 @@ footer {
   margin: 2rem auto;
 }
 
+#contact a {
+  text-decoration: underline;
+}
+
 #contact > ul {
   list-style: square;
   padding-left: 2rem;
@@ -192,7 +203,7 @@ Activate and Deactivate styles
   position: fixed;
   top: 0;
   left: -110%;
-  transition: 0.3s;
+  transition-duration: 0.4s;
 }
 
 .hide-class.active {

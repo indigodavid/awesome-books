@@ -104,18 +104,15 @@ function clearClasses(element1, element2) {
 
 listLink.addEventListener('click', () => {
   toggleVisbility(allBooksSection);
-
   clearClasses(addNewBookSection, contactSection);
 });
 
 addLink.addEventListener('click', () => {
   toggleVisbility(addNewBookSection);
-
   clearClasses(allBooksSection, contactSection);
 });
 
 contactLink.addEventListener('click', () => {
   toggleVisbility(contactSection);
-
   clearClasses(allBooksSection, addNewBookSection);
 });
