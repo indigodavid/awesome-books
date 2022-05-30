@@ -25,12 +25,6 @@ git clone https://github.com/indigodavid/awesome-books.git
 - Twitter: [@LongswordMusic](https://twitter.com/LongswordMusic)
 - LinkedIn: [Ulises Largaespada](https://www.linkedin.com/in/ulises-largaespada-45570b1a4/)
 
-👤 **Alvaro Ruiz**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
 👤 **David Vera**
 
 - GitHub: [@indigodavid](https://github.com/indigodavid)
